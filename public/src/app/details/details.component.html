@@ -1,0 +1,53 @@
+<div class="row">
+    <div class="col-sm-12">
+        <h3>Details about {{ pet.name }}</h3>
+        <a [routerLink]="['/pets']">Home</a>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        <div class="row">
+            <div class="col-sm-4">
+                <h5>Pet Type:</h5>
+            </div>
+            <div class="col-sm-8">
+                <p>{{ pet.type }}</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-4">
+                <h5>Description:</h5>
+            </div>
+            <div class="col-sm-8">
+                <p>{{ pet.description }}</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-4">
+                <h5>Skills:</h5>
+            </div>
+            <div class="col-sm-8">
+                <p *ngFor="let skill of pet.skills">{{ skill }}</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-4">
+                <h5>Likes:</h5>
+            </div>
+            <div class="col-sm-8">
+                <p>{{ pet.likes }}</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <button class="btn btn-outline-dark" [disabled]="buttonDisabled"
+                (click)="likePetThroughService()">Like this Pet</button>
+            <button class="btn btn-outline-dark"
+                (click)="deletePetThroughService()">Adopt this Pet</button>
+        </div>
+
+    </div>
+</div>

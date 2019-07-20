@@ -1,0 +1,97 @@
+<div class="row">
+    <div class="col-sm-12">
+        <h3>Edit This Pet</h3>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        <form #Form="ngForm">
+
+            <div class="text-danger" *ngIf="name.touched && name.invalid">Name
+                must be 3 letters or more.</div>
+            <div class="text-danger" *ngIf="uniqueErrorMessage">{{
+                uniqueErrorMessage }}</div>
+            <div class="form-group">
+                <label for="name" class="form-label"
+                    id="name_label">Name:
+                </label>
+                <input type="text"
+                    ngModel #name="ngModel" required minlength="3"
+                    class="form-control" name="name" placeholder="Name"
+                    aria-label="name" aria-describedby="name_label"
+                    [(ngModel)]="editPet.name">
+            </div>
+
+            <div class="text-danger" *ngIf="type.touched && type.invalid">Type
+                must be 3 letters or more.</div>
+            <div class="form-group">
+                <label for="type" class="form-label"
+                    id="type_label">Type:
+                </label>
+                <input type="text"
+                    ngModel #type="ngModel" required minlength="3"
+                    class="form-control" name="type" placeholder="Type"
+                    aria-label="type" aria-describedby="type_label"
+                    [(ngModel)]="editPet.type">
+            </div>
+
+            <div class="text-danger" *ngIf="description.touched &&
+                description.invalid">Description must be 3 letters or more.</div>
+            <div class="form-group">
+                <label for="description" class="form-label"
+                    id="description_label">Description:
+                </label>
+                <input type="text"
+                    ngModel #description="ngModel" required minlength="3"
+                    class="form-control" name="description"
+                    placeholder="Description" aria-label="description"
+                    aria-describedby="description_label"
+                    [(ngModel)]="editPet.description">
+            </div>
+
+            <div class="row">
+                <div class="col-sm-6">
+
+                    <h5>Skills (Optional):</h5>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <label for="skill1" class="form-label"
+                                id="skill1_label">Skill:
+                            </label>
+                        </div>
+                        <input type="text" class="form-control" name="skill1"
+                            placeholder="Skill One" aria-label="skill1"
+                            aria-describedby="skill1_label"
+                            [(ngModel)]="editPet.skills[0]">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="skill2" class="form-label"
+                            id="skill2_label">Skill:
+                        </label>
+                        <input type="text" class="form-control" name="skill2"
+                            placeholder="Skill Two" aria-label="skill2"
+                            aria-describedby="skill2_label"
+                            [(ngModel)]="editPet.skills[1]">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="skill3" class="form-label"
+                            id="skill3_label">Skill:
+                        </label>
+                        <input type="text" class="form-control" name="skill3"
+                            placeholder="Skill Three" aria-label="skill3"
+                            aria-describedby="skill3_label"
+                            [(ngModel)]="editPet.skills[2]">
+                    </div>
+                </div>
+                <div class="col-sm-6 text-right">
+                    <button class="btn btn-outline-dark"
+                        (click)="updatePetThroughService()">Edit Pet</button>
+                    <button class="btn btn-outline-dark"
+                        [routerLink]="['/pets']">Cancel</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
