@@ -1,16 +1,19 @@
-# Pet Spa
-Web application for a pet spa business with the ability to schedule appointments for your pets.
+# Pet Shelter
+Web application for a pet adoption shelter
 
 # Features
 Login / Registration <br>
-Add Pet(s) to user account <br>
-Schedule services for your pet according to the spa's availability <br>
+Adopt Pets <br>
+Add pets to shelter with pet detail page <br>
+Like pet adoption listing <br>
+
 
 # Built With
 HTML5 <br>
 CSS3 <br>
-Python <br>
-Django <br>
-MySQL  <br>
-
-
+JavaScript <br>
+Angular <br>
+TypeScript  <br>
+MongoDB <br>
+Express <br>
+Bootstrap <br>
